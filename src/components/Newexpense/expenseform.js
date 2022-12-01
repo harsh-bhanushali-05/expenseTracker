@@ -17,14 +17,15 @@ function Expenseform(props) {
   function submit_handler(event) {
     event.preventDefault();
     const expenseData = {
+      id: Math.random(),
       title: enteredtitle,
       amount: enteredprice,
       date: new Date(entereddate),
     };
     props.onExpenseSave(expenseData);
-    seteneteredtitle('');
-    seteneteredprice('');
-    setenetereddate('');
+    seteneteredtitle("");
+    seteneteredprice("");
+    setenetereddate("");
   }
   return (
     <form onSubmit={submit_handler}>
